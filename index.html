@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app ='Assignment2'>
+<head>
+<meta charset="utf-8">
+<title>Assignment 2</title>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+
+
+
+<body>
+<div ng-controller='Tobuy as tb'>
+<h1>To Buy</h1>
+<ol>
+<li ng-repeat="item in tb.items">Buy {{item.quantity}} of {{ item.name}} <button ng-click="tb.bought($index)" >Bought</button></li>
+</ol>
+<div ng-if="tb.items.length == 0" ><h2>Everything is bought!</h2></div>
+
+</div>
+
+<div ng-controller='Bought as bt'>
+<h1>Already Bought</h1>
+<ol>
+  <li ng-repeat="item in bt.items">Bought{{item.quantity}}{{item.name}}</li>
+</ol>
+<div ng-if="bt.items.length == 0" ><h2>Nothing bought yet.</h2></div>
+
+
+</div>
+
+
+</body>
+
+
+
+</html>
